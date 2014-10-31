@@ -33,10 +33,13 @@ module.exports = (robot) ->
     msg.reply "Dicionario Faraniano. \n Até o momento temos: \n #{robot.brain.get('farah_says')}"
 
   robot.respond /frase do Farah (.*) /i, (msg) ->
-    robot.brain.set 'farah_says', "#{robot.brain.get('farah_says')} \n #{msg.match[1]}"
+    says = robot.brain.get('farah_says') || ""
+    robot.brain.set 'farah_says', "#{says} \n #{msg.match[1]}"
     msg.reply "OK, a frase foi salva no nosso dicionario Faraniano. \n Até o momento temos: \n #{robot.brain.get('farah_says')}"
 
-
+  robot.respond /zerar frases do Farah (.*) /i, (msg) ->
+    robot.brain.set 'farah_says', ""
+    msg.send "Ok, Envie novas frases e concorra a uma conversa de 1h com o Farah ao vivo!"
 
   robot.hear /I like pie/i, (msg) ->
     msg.emote "makes a freshly baked pie"
