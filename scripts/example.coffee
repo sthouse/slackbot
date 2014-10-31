@@ -7,8 +7,14 @@
 #   Uncomment the ones you want to try and experiment with.
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
+child_process = require('child_process')
 
 module.exports = (robot) ->
+
+  robot.respond /calendario/i, (msg) ->
+    child_process.exec 'cal -h', (error, stdout, stderr) ->
+      msg.send(stdout)
+
 
   robot.hear /badger/i, (msg) ->
     msg.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
