@@ -32,7 +32,7 @@ module.exports = (robot) ->
   robot.hear /frases do Farah/i, (msg) ->
     msg.reply "Dicionario Faraniano. \n Até o momento temos: \n #{robot.brain.get('farah_says')}"
 
-  robot.respond /frase do Farah (.*) /i, (msg) ->
+  robot.respond /^frase do Farah (.*) /i, (msg) ->
     says = robot.brain.get('farah_says') || ""
     robot.brain.set 'farah_says', "#{says} \n #{msg.match[1]}"
     msg.reply "OK, a frase foi salva no nosso dicionario Faraniano. \n Até o momento temos: \n #{robot.brain.get('farah_says')}"
