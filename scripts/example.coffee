@@ -29,6 +29,8 @@ module.exports = (robot) ->
     else
       msg.reply "Opening #{doorType} doors"
 
+  robot.hear /frases do Farah/i, (msg) ->
+    msg.reply "Dicionario Faraniano. \n Até o momento temos: \n #{robot.brain.get('farah_says')}"
 
   robot.respond /frase do Farah (.*) /i, (msg) ->
     robot.brain.set 'farah_says', "#{robot.brain.get('farah_says')} \n #{msg.match[1]}"
