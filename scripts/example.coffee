@@ -13,8 +13,11 @@ module.exports = (robot) ->
   robot.hear /badger/i, (msg) ->
     msg.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
 
-  robot.hear /workflow$/i, (msg) ->
+  robot.hear /workflow/i, (msg) ->
     msg.send "Entra ai que vc descobre https://github.com/sthouse/openship/wiki/Nosso-Workflow"
+
+  robot.hear /openbot/i, (msg) ->
+    msg.send "alguém me chamou?"
 
   robot.respond /open the (.*) doors/i, (msg) ->
     doorType = msg.match[1]
