@@ -16,8 +16,11 @@ module.exports = (robot) ->
   robot.hear /workflow/i, (msg) ->
     msg.send "Entra ai que vc descobre https://github.com/sthouse/openship/wiki/Nosso-Workflow"
 
-  robot.hear /openbot/i, (msg) ->
-    msg.send "alguém me chamou?"
+  robot.hear /Farah/i, (msg) ->
+    msg.send "Farah foi invocado na conversa! 'É só fazer um javinha' \n 'Coloca um if ai.' "
+
+  # robot.hear /openbot[^:]/i, (msg) ->
+  #   msg.send "alguém me chamou?"
 
   robot.respond /open the (.*) doors/i, (msg) ->
     doorType = msg.match[1]
@@ -93,7 +96,7 @@ module.exports = (robot) ->
     robot.logger.error "DOES NOT COMPUTE"
 
     if msg?
-      msg.reply "DOES NOT COMPUTE"
+      msg.reply "ta de sacanagem"
 
   robot.respond /have a soda/i, (msg) ->
     # Get number of sodas had (coerced to a number).
