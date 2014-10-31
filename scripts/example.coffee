@@ -7,12 +7,14 @@
 #   Uncomment the ones you want to try and experiment with.
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
-child_process = require('child_process')
+child_process = require('child_process').exec
 
 module.exports = (robot) ->
 
   robot.respond /calendario/i, (msg) ->
     child_process.exec 'cal -h', (error, stdout, stderr) ->
+      msg.send(error)
+      msg.send(stderr)
       msg.send(stdout)
 
 
