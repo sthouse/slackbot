@@ -16,8 +16,8 @@ module.exports = (robot) ->
   robot.hear /workflow/i, (msg) ->
     msg.send "Entra ai que vc descobre https://github.com/sthouse/openship/wiki/Nosso-Workflow"
 
-  robot.hear /Farah/i, (msg) ->
-    msg.send "Farah foi invocado na conversa! \n 'É só fazer um javinha' \n 'Coloca um if ai.' "
+  # robot.hear /Farah/i, (msg) ->
+  #   msg.send "Farah foi invocado na conversa! \n 'É só fazer um javinha' \n 'Coloca um if ai.' "
 
   # robot.hear /openbot[^:]/i, (msg) ->
   #   msg.send "alguém me chamou?"
