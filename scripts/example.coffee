@@ -7,7 +7,7 @@
 #   Uncomment the ones you want to try and experiment with.
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
-child_process = require('child_process').exec
+child_process = require('child_process')
 
 module.exports = (robot) ->
 
